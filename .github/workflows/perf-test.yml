@@ -9,7 +9,7 @@ jobs:
       - name: Run JMeter Tests
         uses: rbhadti94/apache-jmeter-action@v0.3.1
         with:
-          testFilePath: jmeter/jmeter-example.jmx
+          testFilePath: jmeter/jmeter-with-assertions.jmx
           outputReportsFolder: reports/
       - name: Upload Results
         uses: actions/upload-artifact@v2
