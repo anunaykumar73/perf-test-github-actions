@@ -1,0 +1,18 @@
+name:  perf test jmeter
+on: [push]
+jobs:
+  perf-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: JMeter Test
+        uses: QAInsights/PerfAction@v2.0
+        with:
+          test-plan-path: ./jmeter/jmeter-example.jmx
+          args: ""
+      - name: Upload Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: jmeter-results
+          path: result.jtl
